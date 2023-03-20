@@ -15,7 +15,7 @@ public class turretManager : MonoBehaviour
         _degrees = Input.GetAxis("Turret Rotation");
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject newobject = Instantiate(bullet, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+            GameObject newobject = Instantiate(bullet, transform.position, transform.rotation);
             newobject.GetComponent<bulletManager>()._travelDirection = new Vector2(-transform.right.y, transform.right.x);
         }
     }
