@@ -1,24 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class playerManager : MonoBehaviour
 {
-    public Rigidbody2D playerRB;
+    private TankControlsManager input = null;
+    private Vector2 moveVector = Vector2.zero;
+    private Rigidbody2D playerRB = null;
+    private float moveSpeed = 5f;
 
-    public float _playermoveSpeed = 5f;
-    Vector2 movement;
-
-    //Physics Update
-    void FixedUpdate()
+    private void Awake()
     {
-        playerRB.MovePosition(playerRB.position + (movement * _playermoveSpeed * Time.fixedDeltaTime));
+        input = new TankControlsManager();
+        playerRB = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        movement.x = Input.GetAxisRaw("Tank Horizontal");
-        movement.y = Input.GetAxisRaw("Tank Vertical");
+        input.Enable();
+        input.Player.TankMovement.performed += OnMovementPerformed;
+        input.Player.TankMovement.canceled += OnMovementCancelled;
+    }
+
+    private void OnDisable()
+    {
+        input.Disable();
+        input.Player.TankMovement.performed -= OnMovementPerformed;
+        input.Player.TankMovement.canceled -= OnMovementCancelled;
+    }
+
+    void FixedUpdate()
+    {
+        playerRB.velocity= moveVector * moveSpeed;
+    }
+
+    private void OnMovementPerformed(InputAction.CallbackContext value)
+    {
+        moveVector= value.ReadValue<Vector2>();
+    }
+    private void OnMovementCancelled(InputAction.CallbackContext value)
+    {
+        moveVector = Vector2.zero;
     }
 }
