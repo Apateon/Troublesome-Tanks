@@ -8,8 +8,12 @@ public class turretManager : MonoBehaviour
 {
     private TankControlsManager input = null;
     private float turner = 0f;
-    float _turnSpeed = 100f;
+    float _turnSpeed = 40f;
     public GameObject bullet;
+
+    public playerManager player;
+
+    public static bool isPaused = false;
 
     private void Awake()
     {
@@ -41,8 +45,14 @@ public class turretManager : MonoBehaviour
 
     private void onShootPerformed(InputAction.CallbackContext value)
     {
-        GameObject newobject = Instantiate(bullet, transform.position, transform.rotation);
-        newobject.GetComponent<bulletManager>()._travelDirection = new Vector2(-transform.right.y, transform.right.x);
+        if(!isPaused && Time.time - player.lastTime >= player.reloadTime)
+        {
+            Vector3 bulletPos = transform.position;
+            bulletPos.z = 0.5f;
+            GameObject newobject = Instantiate(bullet, bulletPos, transform.rotation);
+            newobject.GetComponent<bulletManager>()._travelDirection = new Vector2(-transform.right.y, transform.right.x);
+            player.lastTime = Time.time;
+        }
     }
 
     private void FixedUpdate()
