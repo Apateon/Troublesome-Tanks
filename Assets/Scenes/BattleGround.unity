@@ -680,6 +680,7 @@ MonoBehaviour:
   - {fileID: 1418900761726473834, guid: 87b8f059a9c830f42b6c7981e140af4c, type: 3}
   - {fileID: 3305573943534275607, guid: c6678f2adcaccec4abe72bd35b7669a1, type: 3}
   player: {fileID: 288140817}
+  enemyprefab: {fileID: 2588849022582376583, guid: d252b93f68a3f8840a56e89d69b96518, type: 3}
   pauseMenuPrefab: {fileID: 6820121588514675403, guid: f113c16d9e6f52e459eebbbc2f87a59c, type: 3}
 --- !u!1 &1188231350
 GameObject:
@@ -765,6 +766,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1233181669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1877878755227145962, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
+  m_PrefabInstance: {fileID: 1505937784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482938579
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,13 +863,25 @@ PrefabInstance:
       propertyPath: reloadBar
       value: 
       objectReference: {fileID: 1947224377}
+    - target: {fileID: 1877878755227145962, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3266291644574877896, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1745297421}
+    - target: {fileID: 3266291644574877896, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
+      propertyPath: bulletForce
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5698981494101631444, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: m_Name
       value: PlayerTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698981494101631444, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8259765969306338703, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: m_RootOrder
@@ -871,15 +889,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8259765969306338703, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259765969306338703, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259765969306338703, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259765969306338703, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1009,12 +1027,38 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 216571183272271407, guid: c32e12fa391df60448934d18fbeb60d9, type: 3}
   m_PrefabInstance: {fileID: 1505937784}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1233181669}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8e8b9efe0b53924ebe640b9a639af87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1745297425
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233181669}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000059604645, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7823611, y: 2.56}
+  m_EdgeRadius: 0
 --- !u!1 &1947224375
 GameObject:
   m_ObjectHideFlags: 0

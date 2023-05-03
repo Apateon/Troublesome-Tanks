@@ -62,7 +62,7 @@ public class playerManager : MonoBehaviour
         moveVector = Vector2.zero;
     }
 
-    void TakeDamage(float damage)
+    public void takeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);

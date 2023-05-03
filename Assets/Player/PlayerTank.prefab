@@ -26,11 +26,42 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1877878755227145966}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6010561089698223613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747927007611689178}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747927007611689178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010561089698223613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 1.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3472656394003426423}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3984198916729143069
 PrefabInstance:
@@ -43,6 +74,18 @@ PrefabInstance:
     - target: {fileID: 3262056426632374771, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262056426632374771, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262056426632374771, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262056426632374771, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3262056426632374771, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84,6 +127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3262056426632374771, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3262056426632374775, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
       propertyPath: m_Name
       value: Tank Prefab
@@ -95,6 +142,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3472656394003426423}
   m_SourcePrefab: {fileID: 100100000, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
+--- !u!114 &216571183272271407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5455022871113539278, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
+  m_PrefabInstance: {fileID: 3984198916729143069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877878755227145962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e8b9efe0b53924ebe640b9a639af87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877878755227145962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3262056426632374775, guid: f31c62f17efaf474ea9fe67c99f2eeaf, type: 3}
@@ -165,6 +223,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1877878755227145966}
     m_Modifications:
+    - target: {fileID: 5638389884168858777, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 216571183272271407}
+    - target: {fileID: 5638389884168858777, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 747927007611689178}
+    - target: {fileID: 5638389884168858777, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
+      propertyPath: bulletForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638389884168858777, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
+      propertyPath: bulletprefab
+      value: 
+      objectReference: {fileID: 2365593233192865481, guid: 18aa8462cf270b942866539fd5a8ff1d, type: 3}
     - target: {fileID: 6006392189270886437, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
       propertyPath: m_Name
       value: Turret Prefab
@@ -226,7 +300,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6006392189270886438, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 747927007611689178}
   m_SourcePrefab: {fileID: 100100000, guid: de349435fc1ec7b47915f208e3a7681f, type: 3}
 --- !u!4 &3472656394003426423 stripped
 Transform:
