@@ -677,8 +677,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maps:
   - {fileID: 3305573943534275607, guid: 2e6c22b3eef065745a0d80f9e6db0f40, type: 3}
-  - {fileID: 1418900761726473834, guid: 87b8f059a9c830f42b6c7981e140af4c, type: 3}
   - {fileID: 3305573943534275607, guid: c6678f2adcaccec4abe72bd35b7669a1, type: 3}
+  - {fileID: 3555500081375516755, guid: d391b17555c95784d8309a8d2dda5c60, type: 3}
+  - {fileID: 7185795286812993035, guid: 1a6ef97a35a72644ba640df76f12e4f4, type: 3}
+  - {fileID: 1418900761726473834, guid: 87b8f059a9c830f42b6c7981e140af4c, type: 3}
+  - {fileID: 6861749567373748355, guid: 91833ce1f00484a40b94a7a33a03f028, type: 3}
+  - {fileID: 4451631158442282067, guid: e1e99e4c656646a4390a4abb2182fb4c, type: 3}
+  - {fileID: 5605298487932252319, guid: 8faddeace8684c14a9e3e285f1078d41, type: 3}
   player: {fileID: 288140817}
   enemyprefab: {fileID: 2588849022582376583, guid: d252b93f68a3f8840a56e89d69b96518, type: 3}
   pauseMenuPrefab: {fileID: 6820121588514675403, guid: f113c16d9e6f52e459eebbbc2f87a59c, type: 3}
