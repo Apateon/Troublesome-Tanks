@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         int mapnumber = Random.Range(0, maps.Length);
-        Instantiate(maps[3], new Vector3(0, 0, 3), Quaternion.identity);
+        Instantiate(maps[7], new Vector3(0, 0, 3), Quaternion.identity);
         player.transform.position = new Vector3(-16, -3, 0);
         enemies[0] = Instantiate(enemyprefab, new Vector3(-9, 4, 0), Quaternion.identity);
         enemies[1] = Instantiate(enemyprefab, new Vector3(9, 4, 0), Quaternion.identity);

@@ -32,7 +32,7 @@ public class bulletManager : MonoBehaviour
                     enemyManager enemy = hitinfo.GetComponent<enemyManager>();
                     if (enemy != null)
                     {
-                        enemy.takeDamage(20);
+                        enemy.takeDamage(25);
                         Destroy(gameObject);
                     }
                     break;
