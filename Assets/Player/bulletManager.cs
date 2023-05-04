@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class bulletManager : MonoBehaviour
 {
-    public float _bulletSpeed = 5f;
-    public UnityEngine.Vector2 _travelDirection;
     public Rigidbody2D bulletRB;
     Camera _mainCam;
     UnityEngine.Vector2 _screenBounds;
+    public string creator;
 
     private void Start()
     {
@@ -22,8 +21,33 @@ public class bulletManager : MonoBehaviour
         if (transform.position.x > _screenBounds.x || transform.position.x < -_screenBounds.x || transform.position.y > _screenBounds.y || transform.position.y < -_screenBounds.y)
             Destroy(gameObject);
     }
-    private void FixedUpdate()
+
+    private void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        bulletRB.MovePosition(bulletRB.position + (_travelDirection * _bulletSpeed * Time.fixedDeltaTime));
+        if(hitinfo.tag!=creator)
+        {
+            switch(hitinfo.tag)
+            {
+                case "Enemy":
+                    enemyManager enemy = hitinfo.GetComponent<enemyManager>();
+                    if (enemy != null)
+                    {
+                        enemy.takeDamage(20);
+                        Destroy(gameObject);
+                    }
+                    break;
+                case "Player":
+                    playerManager player = hitinfo.GetComponent<playerManager>();
+                    if (player != null)
+                    {
+                        player.takeDamage(5);
+                        Destroy(gameObject);
+                    }
+                    break;
+                default:
+                    Destroy(gameObject); break;
+            }
+
+        }
     }
 }

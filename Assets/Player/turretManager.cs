@@ -9,7 +9,9 @@ public class turretManager : MonoBehaviour
     private TankControlsManager input = null;
     private float turner = 0f;
     float _turnSpeed = 40f;
-    public GameObject bullet;
+    public GameObject bulletprefab;
+    public Transform firePoint;
+    float bulletForce = 6f;
 
     public playerManager player;
 
@@ -47,10 +49,11 @@ public class turretManager : MonoBehaviour
     {
         if(!isPaused && Time.time - player.lastTime >= player.reloadTime)
         {
-            Vector3 bulletPos = transform.position;
+            Vector3 bulletPos = firePoint.position;
             bulletPos.z = 0.5f;
-            GameObject newobject = Instantiate(bullet, bulletPos, transform.rotation);
-            newobject.GetComponent<bulletManager>()._travelDirection = new Vector2(-transform.right.y, transform.right.x);
+            GameObject bullet = Instantiate(bulletprefab, bulletPos, firePoint.rotation);
+            bullet.GetComponent<bulletManager>().creator = "Player";
+            bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
             player.lastTime = Time.time;
         }
     }
