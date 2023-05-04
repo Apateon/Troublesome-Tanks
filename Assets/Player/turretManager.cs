@@ -45,13 +45,20 @@ public class turretManager : MonoBehaviour
 
     private void onShootPerformed(InputAction.CallbackContext value)
     {
-        if(!isPaused && Time.time - player.lastTime >= player.reloadTime)
+        if (!isPaused && Time.time - player.lastTime >= player.reloadTime)
         {
             Vector3 bulletPos = transform.position;
             bulletPos.z = 0.5f;
             GameObject newobject = Instantiate(bullet, bulletPos, transform.rotation);
             newobject.GetComponent<bulletManager>()._travelDirection = new Vector2(-transform.right.y, transform.right.x);
             player.lastTime = Time.time;
+
+            // Add particle system
+            ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+            if (ps != null)
+            {
+                ps.Play();
+            }
         }
     }
 
