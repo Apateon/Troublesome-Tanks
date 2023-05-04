@@ -34,15 +34,11 @@ public class LevelManager : MonoBehaviour
     {
         if (enemies[0].IsDestroyed() && enemies[1].IsDestroyed() && enemies[2].IsDestroyed())//you have won condition
         {
-            Debug.Log("You won");
-            //do the same as pausing a game
-            //show the end screen, same as pause screen except with you have won
+            SceneManager.LoadScene("WinScreen");
         }
         else if (player.GetComponentInChildren<playerManager>().isDead)//you have lost the game
         {
-            Debug.Log("You Lost");
-            //do the same as pausing the game
-            //show the end screen, same as the pause screen except with you have lost
+            SceneManager.LoadScene("LooseScreen");
         }
     }
 

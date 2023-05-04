@@ -20,5 +20,10 @@ public class MenuButtons : MonoBehaviour
     public void exitButton()
     {
         Application.Quit();
-    }    
+    }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
 }
