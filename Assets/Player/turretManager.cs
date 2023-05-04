@@ -47,7 +47,7 @@ public class turretManager : MonoBehaviour
 
     private void onShootPerformed(InputAction.CallbackContext value)
     {
-        if(!isPaused && Time.time - player.lastTime >= player.reloadTime)
+        if (!isPaused && Time.time - player.lastTime >= player.reloadTime)
         {
             Vector3 bulletPos = firePoint.position;
             bulletPos.z = 0.5f;
@@ -55,6 +55,13 @@ public class turretManager : MonoBehaviour
             bullet.GetComponent<bulletManager>().creator = "Player";
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
             player.lastTime = Time.time;
+
+            // Add particle system
+            ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+            if (ps != null)
+            {
+                ps.Play();
+            }
         }
     }
 
