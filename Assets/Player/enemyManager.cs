@@ -61,6 +61,7 @@ public class enemyManager : MonoBehaviour
 
     void Die()
     {
+        Destroy(transform.parent.gameObject);
         Destroy(gameObject);
     }
 }

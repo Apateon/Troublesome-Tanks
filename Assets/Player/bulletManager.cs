@@ -40,7 +40,7 @@ public class bulletManager : MonoBehaviour
                     playerManager player = hitinfo.GetComponent<playerManager>();
                     if (player != null)
                     {
-                        player.takeDamage(5);
+                        player.takeDamage(100);
                         Destroy(gameObject);
                     }
                     break;

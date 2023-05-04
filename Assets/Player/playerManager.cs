@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Processors;
 
 public class playerManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class playerManager : MonoBehaviour
 
     public float maxHealth = 100f;
     public float currentHealth;
+    public bool isDead = false;
 
     public HealthBarScript healthBar;
     public HealthBarScript reloadBar;
@@ -66,5 +68,7 @@ public class playerManager : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if(currentHealth<=0)
+            isDead = true;
     }
 }
